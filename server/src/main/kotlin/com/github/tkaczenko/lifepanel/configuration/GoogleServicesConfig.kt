@@ -25,7 +25,7 @@ import java.util.*
 @Configuration
 class GoogleServicesConfig {
     private companion object {
-        const val CREDENTIALS_FILE_PATH = "/client_id.json"
+        const val CREDENTIALS_FILE_PATH = "/credentials.json"
         const val TOKENS_DIRECTORY_PATH = "tokens"
         const val APPLICATION_NAME = "lifepanel"
 
