@@ -1,0 +1,52 @@
+plugins {
+    java
+    kotlin("jvm") version "1.3.72"
+    kotlin("plugin.spring") version "1.3.72"
+    kotlin("plugin.jpa") version "1.3.72"
+    id("io.spring.dependency-management") version "1.0.10.RELEASE"
+    id("org.springframework.boot") version "2.4.0"
+}
+
+group = "com.github.tkaczenko.lifepanel"
+version = "1.0-SNAPSHOT"
+
+sourceSets {
+    main {
+        java.srcDir("src/main/kotlin")
+    }
+    test {
+        java.srcDir("src/test/kotlin")
+    }
+}
+
+val javaVersion = JavaVersion.VERSION_11
+java {
+    sourceCompatibility = javaVersion
+    targetCompatibility = javaVersion
+}
+
+repositories {
+    mavenCentral()
+    maven(url = "https://repo.spring.io/snapshot")
+    maven(url = "https://repo.spring.io/milestone")
+}
+
+dependencies {
+    implementation(kotlin("stdlib"))
+    implementation(kotlin("reflect"))
+    implementation("org.springframework.boot:spring-boot-starter")
+    implementation("org.springframework.boot:spring-boot-starter-webflux")
+    implementation("com.fasterxml.jackson.module:jackson-module-kotlin")
+    implementation("net.bull.javamelody:javamelody-spring-boot-starter:1.86.0")
+    implementation("commons-codec:commons-codec:1.15")
+    implementation("io.springfox:springfox-swagger2:2.9.2")
+    implementation("io.springfox:springfox-spi:2.9.2")
+    implementation("io.springfox:springfox-spring-web:2.9.2")
+    implementation("io.springfox:springfox-swagger-ui:2.9.2")
+    implementation("io.springfox:springfox-swagger-common:2.9.2")
+    implementation("io.springfox:springfox-core:2.9.2")
+    implementation("com.google.api-client:google-api-client:1.23.0")
+    implementation("com.google.oauth-client:google-oauth-client-jetty:1.23.0")
+    implementation("com.google.apis:google-api-services-sheets:v4-rev516-1.23.0")
+    testImplementation("junit", "junit", "4.12")
+}
