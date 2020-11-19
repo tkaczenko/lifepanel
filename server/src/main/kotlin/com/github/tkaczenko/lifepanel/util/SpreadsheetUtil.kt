@@ -10,7 +10,7 @@ import java.time.LocalDate
 import java.time.ZoneId
 
 fun dateCell(date: LocalDate): CellData? {
-    val milliseconds = date.atStartOfDay(ZoneId.of("Europe/Kyiv")).toInstant().toEpochMilli()
+    val milliseconds = date.atStartOfDay(ZoneId.of("Europe/Kiev")).toInstant().toEpochMilli()
     return CellData()
         .setUserEnteredValue(
             ExtendedValue()

@@ -15,16 +15,16 @@ import org.springframework.context.support.ReloadableResourceBundleMessageSource
 open class AppConfigurer {
     @Bean
     @Scope("prototype")
-    fun logger(injectionPoint: InjectionPoint): Logger {
+    open fun logger(injectionPoint: InjectionPoint): Logger {
         return LoggerFactory.getLogger(
             injectionPoint.methodParameter?.containingClass // constructor
                 ?: injectionPoint.field?.declaringClass) // or field injection
     }
 
     @Bean
-    fun messageSource(): MessageSource {
+    open fun messageSource(): MessageSource {
         val messageSource = ReloadableResourceBundleMessageSource()
-        messageSource.setBasename("classpath:messages")
+        messageSource.setBasename("classpath:messages/label")
         messageSource.setDefaultEncoding("UTF-8")
         return messageSource
     }

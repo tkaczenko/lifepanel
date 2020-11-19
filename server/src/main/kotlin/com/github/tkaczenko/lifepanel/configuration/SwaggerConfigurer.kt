@@ -23,7 +23,7 @@ open class SwaggerConfigurer {
         return BasicAuth("basicAuth")
     }
 
-    protected fun basicAuthReference(): SecurityReference {
+    private fun basicAuthReference(): SecurityReference {
         return SecurityReference("basicAuth", arrayOfNulls<AuthorizationScope>(0))
     }
 }
